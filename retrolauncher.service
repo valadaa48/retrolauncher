@@ -1,0 +1,16 @@
+[Unit]
+Description=Retro Launcher
+
+[Service]
+User=odroid
+ExecStart=/usr/bin/retrolauncher
+Type=simple
+StandardInput=tty-force
+StandardOutput=tty
+TTYVHangup=yes
+TTYPath=/dev/tty1
+TTYReset=yes
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
