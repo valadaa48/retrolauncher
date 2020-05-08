@@ -50,7 +50,6 @@ class RetroLauncher(object):
 
         self._dialog = dialog.Dialog(dialog="dialog")
         self._dialog.set_background_title("{:^58s}".format(".-=o=-. Retro Launcher .-=o=-."))
-#        self._dialog.set_background_title(f"{'1234567890' * 10}".format(".-=o=-. Retro Launcher .-=o=-."))
 
         self._input_thread = map_kbd(self)
 
@@ -58,7 +57,7 @@ class RetroLauncher(object):
         while 1:
             cmds = self._get_cmds()
 
-            items = [x for x in sorted(cmds.keys())]
+            items = [x for x in sorted(cmds.keys()) if x != "RetroLauncher"]
             items += [""]  # separator
             items += [
                 "System Update",
